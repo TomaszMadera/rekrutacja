@@ -53,6 +53,8 @@ define('BASE_DIR', getcwd() . '/');
 define('BASE_URL', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/');
 ```
 
+STRONĘ POSTAWIŁEM TEŻ W RAZIE PROBLEMÓW Z INSTALACJĄ W ŚRODOWISKU POD LINKIEM http://skasowalemwindowsa.pl/rekrutacja
+
 ## Jeżeli miałbym więcej czasu zrobiłbym
 
 - Ustawił dokładnie kodowanie znaków przy tworzeniu tabeli
