@@ -1,0 +1,67 @@
+<?php echo $header; ?>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+       
+        <div class="btn-group mb-3" role="group">
+          <a href="/" class="btn btn-primary">Powróć na stronę główną</a>
+        </div>
+
+ <h1>Wniosek urlopowy (brakło mi czasu na dodanie hasha do formularza, dokończenie walidacji i załącznia pliku)</h1>
+
+ <?php if ($form_sent) : ?>
+  <div class="alert alert-success" role="alert">
+  Dziękujemy za przesłanie wniosku!
+</div>
+<?php else : ?>
+
+  <?php if ($errors) : ?>
+    
+    <?php if (isset($errors['data_od'])) : ?><div class="alert alert-danger" role="alert">Błędny format: Data od</div><?php endif; ?>
+      <?php if (isset($errors['data_do'])) : ?><div class="alert alert-danger" role="alert">Błędny format: Data do</div><?php endif; ?>
+      
+    <?php endif; ?>
+
+     <form method="post">
+
+     <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Typ urlopu</label>
+                <select id="typ_id" name="typ_id" class="form-control">
+                <?php foreach ($typy as $typ) : ?>
+            <option value="<?php echo $typ['typ_id'] ?>" <?php if ($typ['typ_id'] == $typ_id) echo 'selected'; ?>><?php echo $typ['value'] ?></option>
+            <?php endforeach; ?>
+          </select>
+        </div>
+   </div>
+
+   <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="data_od">Data od [RRRR-MM-DD]</label>
+          <input type="text" class="form-control" id="data_od" name="data_od" value="<?php echo $data_od ?>">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="data_do">Data do [RRRR-MM-DD]</label>
+          <input type="text" class="form-control" id="data_do" name="data_do" value="<?php echo $data_do ?>">
+        </div>
+   </div>
+  
+  <div class="form-group">
+    <label for="inputAddress">Komentarz</label>
+    <textarea class="form-control" id="komentarz" name="komentarz" rows="3"><?php echo $komentarz ?></textarea>
+  </div>
+
+  <div class="form-group">
+  <button type="submit" class="btn btn-primary">Wyślij</button>
+  </div>
+</form>
+
+
+    </div>
+  </div>
+</div>
+
+<?php endif; ?>
+
+<?php echo $footer; ?>

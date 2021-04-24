@@ -1,0 +1,43 @@
+<?php echo $header; ?>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+
+      <h2 class="text-center">Zaloguj się</h2>
+
+      <?php if ($error) : ?>
+        <div class="alert alert-danger" role="alert">
+        
+        Błędne dane logowania
+        
+        </div>
+      <?php endif; ?>
+
+
+      <form method="post">
+      <div class="form-group">
+        <label for="login">Login</label>
+        <input type="text" class="form-control" name="login" id="login" placeholder="Twój login">
+      </div>
+      <div class="form-group">
+        <label for="password">Hasło</label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Twoje hasło">
+      </div>
+      <button type="submit" class="btn btn-primary">Zaloguj się</button>
+    </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+    $('#exampleModal').modal('show');
+</script>
+
+<?php echo $footer; ?>

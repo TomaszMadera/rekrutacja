@@ -1,0 +1,23 @@
+<?php echo $header; ?>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+       
+
+        <div class="jumbotron">
+        <h1 class="display-4">Witaj <?php echo $user_data['name'] . ' ' . $user_data['surname'] . ', płeć: ' . $user_data['sex_value'] ?>!</h1>
+        <p class="lead">W tym zadaniu rekrutacyjnym możesz się zalogować, wylogować, a także złożyć wniosek urlopowy.</p>
+        <hr class="my-4">
+        <p>Powodzenia.</p>
+        <p class="lead">
+        <a href="/logout" class="btn btn-danger">Wyloguj się</a>
+        <a href="/wniosek" class="btn btn-primary">Złóż wniosek urlopowy</a>
+        </p>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+<?php echo $footer; ?>
