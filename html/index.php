@@ -17,8 +17,4 @@ if ( !Auth::getInstance()->isLoggedIn() && $Router->getController() != 'LoginCon
 
 $Controller->output($Router->getController(), $Router->getAction());
 
-<<<<<<< HEAD
 // test git kraken
-=======
-// test1
->>>>>>> 1.0
